@@ -1,2 +1,116 @@
+CEN4020 - Assignment #3: Git and Object-Oriented Programming
+Repository: https://github.com/CrashHermit/assignment2
+
 Name: Joshua D. Hicks
 FSUID: jdh10c
+
+Date Git Lab Tutorials were completed: October 15, 2026
+Date GitHub account was created (approximate): July, 2016
+
+
+1. Paste the console output saved at the end of Repository Task 3.C.
+
+joshua@fe6c70046dd1:~/assignments/assignment2$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 480 bytes | 480.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/CrashHermit/assignment2
+   859c45a..1bcd684  master -> master
+joshua@fe6c70046dd1:~/assignments/assignment2$
+
+
+2. How many commits have been done to the repository so far, by anyone?
+   What Git command did you use?
+
+Command: git rev-list --count HEAD
+Total commits: 9 (checked after task 3.D, before completing these answers)
+
+This command counts the commits reachable from the current HEAD,
+including commits that existed before I forked the repository.
+
+
+3. When was README.md last modified? What Git command did you use?
+
+Command: git log -1 --format="%ad" --date=iso -- README.md
+Last modification date: October 15, 2026 (07:56:32 -0500; 12:56:32 UTC)
+
+This reports the date of the most recent commit that changed README.md.
+
+
+4. Mention two reasons why branches are used in a Git repository.
+
+First, branches allow developers to work on separate features or fixes
+without changing the main development branch. Second, branches let a
+team test and review changes before merging them into the main project.
+
+
+5. What is the difference between git log and git status?
+
+git log displays the repository's commit history, including information
+such as commit IDs, authors, dates, and messages. git status shows the
+current state of the working directory and staging area, including
+modified, staged, and untracked files. In short, git log shows previous
+commits, while git status shows changes that have not yet been committed.
+
+
+6. What command shows commits in which Vehicle.h was modified?
+
+git log -- Vehicle.h
+
+This limits the commit history to commits affecting Vehicle.h.
+
+
+7. What command shows commits whose messages contain the word "file"?
+
+git log --grep="file" -i
+
+The --grep option searches commit messages. The -i option makes the
+search case-insensitive.
+
+
+8. In object-oriented programming, what are inheritance, polymorphism,
+   and encapsulation?
+
+I. Inheritance is when a class derives from another class and inherits
+its accessible members. It allows related classes to reuse and extend
+common behavior. For example, Car can derive from Vehicle.
+
+II. Polymorphism allows the same interface or operation to behave
+differently depending on the type of object. In C++, a virtual function
+can be overridden by a derived class and called through a base-class
+pointer or reference.
+
+III. Encapsulation is the practice of keeping an object's data and
+related operations together in a class while controlling access to its
+internal state. For example, private data members can be accessed or
+changed through public member functions.
+
+
+9. What is the main difference between the "Dictator and Lieutenants"
+   workflow and the "Integration Manager" workflow?
+
+The Integration Manager workflow has one maintainer who reviews and
+integrates contributions from developers' separate repositories into
+the official repository. The Dictator and Lieutenants workflow adds
+another level of integration. Lieutenants manage contributions for
+particular parts of the project, and the dictator merges the work
+collected by those lieutenants. The main difference is this intermediate
+layer of maintainers.
+
+
+10. How would a team of 100 developers benefit from using the
+    "Dictator and Lieutenants" workflow instead of the "Centralized"
+    workflow?
+
+With 100 developers, a centralized workflow can become difficult to
+coordinate because everyone contributes to the same shared repository.
+The Dictator and Lieutenants workflow divides responsibility among
+smaller groups, each overseen by a lieutenant. Lieutenants can review
+changes, resolve conflicts, and integrate related work before sending
+it to the dictator. This reduces the amount of integration work handled
+by one person and helps a large team organize changes without every
+developer working directly on the main branch.
